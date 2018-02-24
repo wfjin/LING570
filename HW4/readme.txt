@@ -1,0 +1,3 @@
+The FSM in Q1 is a combination of a fst and a fsa. The fst turns the input word into its labels, for example “walks” would be transduced into the label of “walk” and the label of “s”. Then the fsa would use the information from the morph rules file to check if it satisfies the rule.
+
+In Q3, since we need the words and the labels together, I modified the fst and fsa so that the output would be a string of word plus its label. Also, the fsa is modified as a fst in the same way and every word has its own arc to check and the output would be the original input from the first fst. In this way, the output would a list of words+labels, and in morph_acceptor2.sh, I just have to process the information in the correct format.
